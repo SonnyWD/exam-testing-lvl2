@@ -2,17 +2,14 @@
 
 ### Objectif des tests unitaires
 Quel est l'objectif principal des tests unitaires ?
-   - A) Tester l'intégration entre plusieurs composants
+
    - B) Vérifier le comportement d'une unité de code isolée
-   - C) Valider l'expérience utilisateur
-   - D) Tester les performances du système
+
 
 ### Utilisation de Gherkin
 Gherkin est principalement utilisé pour :
-   - A) Écrire des tests unitaires
+
    - B) Décrire le comportement attendu dans un format compréhensible par tous
-   - C) Documenter le code source
-   - D) Analyser les performances des tests
 
 ### Principe d'isolation
 Expliquez en quoi consiste le principe d'isolation dans les tests unitaires et pourquoi il est important.
@@ -23,50 +20,63 @@ Le BDD est une extension du :
    - B) Test Driven Development
    - C) Extreme Programming
    - D) Scrum
+    - Nous ne l'avons pas vu en cours 
 
 ### Fonction des tests d'intégration
 Les tests d'intégration vérifient principalement :
-   - A) Le fonctionnement isolé de chaque composant
+
    - B) L'interaction entre différents composants ou modules
-   - C) L'expérience utilisateur globale
-   - D) La vitesse d'exécution du code
+
 
 ### Structure Gherkin
 Expliquez la structure d'un scénario Gherkin et donnez un exemple concret.
 
+Fonctionnalité : Emprunt de livre (décrit ce que cela fait)
+
+  En tant qu’utilisateur inscrit
+  Je veux pouvoir emprunter un livre disponible
+  Afin de le lire à domicile
+
+  (décrit le cas d'utilisation)
+  Scénario : L’utilisateur emprunte un livre disponible
+    Étant donné que le livre "1984" est disponible dans le catalogue
+    Et que l’utilisateur "Alice" est inscrit avec la catégorie "standard"
+    Quand Alice emprunte le livre "1984"
+    Alors le livre "1984" doit être marqué comme "borrowed"
+    Et il doit être associé à l’utilisateur "Alice"
+    Et la date de retour doit être fixée à 14 jours après l’emprunt
+
+
 ### Mocks en tests unitaires
 Dans le contexte des tests unitaires, que sont les "mocks" ?
-   - A) Des erreurs volontairement introduites pour vérifier la robustesse du code
+
    - B) Des objets qui simulent le comportement de dépendances réelles
-   - C) Des tests qui échouent intentionnellement
-   - D) Des interfaces utilisateur simulées
 
 ### Objectif des tests end-to-end
 Les tests end-to-end visent à :
-   - A) Vérifier le fonctionnement d'un composant isolé
+
    - B) Tester l'application de bout en bout du point de vue de l'utilisateur
-   - C) Mesurer uniquement les performances de l'application
-   - D) Remplacer tous les autres types de tests
+
 
 ### Cycle TDD
 Expliquez en détail le cycle Red-Green-Refactor du TDD et ce qui se passe à chaque étape.
 
+J'ai pas souvenir que tu en aies parlé.
+
 ### Caractéristiques d'un bon test unitaire
 Quelle est la caractéristique idéale d'un bon test unitaire ?
-    - A) Il doit être complexe pour couvrir tous les cas
+
     - B) Il doit être rapide à exécuter, isolé et répétable
-    - C) Il doit tester plusieurs fonctionnalités à la fois
-    - D) Il doit nécessiter une configuration manuelle avant chaque exécution
 
 ### Mots-clés de Gherkin
 Quels sont les mots-clés principaux de Gherkin ?
-    - A) Test, Code, Validate
-    - B) Setup, Execute, Verify, Teardown
+
     - C) Feature, Scenario, Given, When, Then
-    - D) Describe, It, Expect, Assert
 
 ### Tests unitaires vs tests d'intégration
 Quelles sont les principales différences entre les tests unitaires et les tests d'intégration ?
+
+Les tests unitaires testent uniquement une fonction de manière isolée, un test d'intégration va tester l'intéraction entre deux fonctions par exemple.
 
 ### Nom du cycle TDD
 Le cycle TDD classique est connu sous le nom de :
@@ -74,16 +84,17 @@ Le cycle TDD classique est connu sous le nom de :
     - B) Red-Green-Refactor
     - C) Build-Measure-Learn
     - D) Test-Code-Deploy
+    Je ne sais pas
 
 ### Focus des tests fonctionnels
 Les tests fonctionnels se concentrent sur :
-    - A) Le code source interne
+
     - B) Les interactions entre composants
-    - C) Le comportement du système par rapport aux spécifications
-    - D) La performance du système sous charge
 
 ### BDD et communication d'équipe
 Comment le BDD peut-il améliorer la communication entre les équipes techniques et les équipes métier ?
+
+Je sais pas 
 
 ### Avantage principal du TDD
 Quel est l'avantage principal du TDD ?
@@ -91,9 +102,15 @@ Quel est l'avantage principal du TDD ?
     - B) Il garantit l'absence totale de bugs
     - C) Il favorise un design modulaire et des interfaces claires
     - D) Il élimine le besoin de documentation
+    Je sais pas
 
 ### Avantages et défis des tests end-to-end
 Quels sont les avantages et les défis spécifiques liés aux tests end-to-end par rapport aux autres types de tests ?
+
+Les tests end-to-end vérifient le bon fonctionnement de l'application dans son ensemble, comme si un utilisateur l'utilisait réellement.
+Ils permettent de valider les parcours critiques (ex : inscription, commande), mais sont souvent plus lents et fragiles que les tests unitaires.
+Ils nécessitent une maintenance régulière, donc on les utilise de façon ciblée pour tester les fonctionnalités essentielles.
+Ils sont complémentaires aux tests unitaires et d’intégration.
 
 ### Format des scénarios BDD
 Quel est le format typique d'un scénario BDD ?
@@ -101,9 +118,16 @@ Quel est le format typique d'un scénario BDD ?
     - B) Étant donné-Quand-Alors
     - C) Qui-Quoi-Où-Quand
     - D) Pour-Pendant-Après
+Je ne sais pas 
 
 ### Avantages et limites des tests unitaires
 Décrivez les avantages et les limites des tests unitaires dans un projet de développement logiciel.
+
+Les tests unitaires présentent de nombreux avantages : ils sont rapides à exécuter, peu coûteux, et permettent de détecter les bugs très tôt dans le développement.
+Ils facilitent également la modularité du code et le refactoring en toute sécurité.
+Cependant, ils ont leurs limites : ils ne testent que des composants isolés, ne détectent pas les problèmes d’intégration, et peuvent nécessiter des mocks pour simuler certaines dépendances.
+Mal utilisés, ils peuvent donner une fausse impression de fiabilité globale du système.
+
 
 ### Fonctionnalité de réutilisation dans Gherkin
 Quelle est la fonctionnalité de Gherkin qui permet de réutiliser des étapes communes à plusieurs scénarios ?
@@ -111,13 +135,11 @@ Quelle est la fonctionnalité de Gherkin qui permet de réutiliser des étapes c
     - B) Background
     - C) Scenario Outline
     - D) Tags
+Je ne sais pas
 
 ### Responsabilité des tests fonctionnels
 Qui est généralement responsable de l'écriture et de l'exécution des tests fonctionnels ?
     - A) Les développeurs uniquement
-    - B) Les testeurs QA uniquement
-    - C) Les développeurs et les testeurs QA
-    - D) Les utilisateurs finaux
 
 ### Moment d'écriture du code en TDD
 Dans le TDD, à quel moment écrit-on le code de production ?
@@ -125,40 +147,38 @@ Dans le TDD, à quel moment écrit-on le code de production ?
     - B) Après avoir écrit les tests mais avant de les exécuter
     - C) Après avoir exécuté les tests et constaté leur échec
     - D) Après que tous les tests aient réussi
+Je ne sais pas
 
 ### Outils pour tests end-to-end
 Quel outil est couramment utilisé pour les tests end-to-end d'applications web ?
-    - A) JUnit
-    - B) Mockito
+
     - C) Playwright
-    - D) NUnit
 
 ### Différences entre BDD et TDD
 En quoi le BDD diffère-t-il du TDD en termes d'approche et d'objectifs ?
+Je ne sais pas
+
 
 ### Défis des tests d'intégration
 Quels défis sont fréquemment rencontrés lors de la mise en place de tests d'intégration ?
-    - A) La difficulté à isoler les composants
-    - B) La lenteur d'exécution des tests
-    - C) La difficulté à simuler certaines dépendances
+
     - D) Toutes les réponses ci-dessus
 
 ### Caractéristiques d'un bon test end-to-end
 Quelle est la caractéristique d'un bon test end-to-end ?
-    - A) Il doit tester toutes les fonctionnalités en une seule fois
+
     - B) Il doit simuler avec précision le comportement réel des utilisateurs
-    - C) Il doit être exécuté uniquement en production
-    - D) Il doit être modifié fréquemment
+
 
 ### Défis de l'adoption du TDD
 Quels sont les défis couramment rencontrés lors de l'adoption du TDD dans une équipe, et comment pourriez-vous les surmonter ?
+Je ne sais pas 
 
 ### Frameworks de tests unitaires
 Lequel de ces frameworks n'est PAS utilisé pour les tests unitaires ?
-    - A) JUnit
-    - B) NUnit
+
     - C) Selenium
-    - D) Vitest
+
 
 ### Rôles dans le processus BDD
 Quels rôles sont généralement impliqués dans le processus BDD ?
@@ -166,19 +186,23 @@ Quels rôles sont généralement impliqués dans le processus BDD ?
     - B) Développeurs et testeurs
     - C) Développeurs, testeurs et product owners
     - D) Développeurs, testeurs, product owners et parties prenantes métier
+Je ne sais pas 
 
 ### Maintenance des tests end-to-end
 Comment géreriez-vous la maintenance des tests end-to-end pour une application qui évolue rapidement ?
 
+Pour une application qui évolue rapidement, je maintiendrais les tests end-to-end en me concentrant sur les parcours critiques, en utilisant des sélecteurs stables (data-testid), en évitant les dépendances inutiles à l’interface, et en exécutant les tests automatiquement en CI pour détecter les régressions tôt.
+Je documenterais aussi chaque scénario pour faciliter leur mise à jour.
+
 ### Inconvénients des tests fonctionnels
 Quel est le principal inconvénient des tests fonctionnels ?
-    - A) Ils sont trop simples pour détecter des bugs complexes
+
     - B) Ils sont généralement lents et coûteux à exécuter
-    - C) Ils ne peuvent pas être automatisés
-    - D) Ils nécessitent peu de connaissances du domaine
+
 
 ### Intégration de Gherkin en agile
 Comment intégreriez-vous Gherkin dans un processus de développement agile ? Quels seraient les avantages ?
+je ne sais pas 
 
 ### Principes du TDD
 Lequel des principes suivants n'est PAS associé au TDD ?
@@ -186,9 +210,14 @@ Lequel des principes suivants n'est PAS associé au TDD ?
     - B) Écrire le code minimum qui fait passer le test
     - C) Refactoriser le code après chaque test réussi
     - D) Écrire tous les tests à la fin du développement
+Je ne sais pas 
 
 ### Différences entre tests fonctionnels et autres tests
 En quoi les tests fonctionnels diffèrent-ils des tests unitaires et d'intégration en termes d'approche et d'objectifs ?
+
+Les tests fonctionnels se concentrent sur le comportement global du système par rapport aux spécifications métier, en simulant des scénarios réels d’utilisation.
+À l’inverse, les tests unitaires vérifient des composants isolés (comme une fonction ou une méthode) et les tests d’intégration vérifient que plusieurs composants fonctionnent bien ensemble.
+L’approche des tests fonctionnels est plus orientée utilisateur, tandis que les tests unitaires et d’intégration sont plus techniques et proches du code.
 
 ### Approche combinant TDD, BDD et Gherkin
 Quelle approche combine naturellement TDD, BDD et Gherkin ?
@@ -196,18 +225,26 @@ Quelle approche combine naturellement TDD, BDD et Gherkin ?
     - B) Specification By Example
     - C) Scrum
     - D) Kanban
+Je ne sais 
 
 ### Organisation des tests fonctionnels
 Décrivez comment vous organiseriez les tests fonctionnels pour une application web de e-commerce.
+Je sais pas 
 
 ### Pyramide de tests
 Quelle est la pyramide de tests classique, du bas vers le haut ?
-    - A) Tests E2E, Tests fonctionnels, Tests d'intégration, Tests unitaires
+
     - B) Tests unitaires, Tests d'intégration, Tests fonctionnels, Tests E2E
-    - C) Tests fonctionnels, Tests unitaires, Tests d'intégration, Tests E2E
-    - D) Tests unitaires, Tests fonctionnels, Tests d'intégration, Tests E2E
+
 
 ### Stratégie de test optimale
 Comment détermineriez-vous la stratégie de test optimale pour un projet, en considérant les différents types de tests abordés dans ce questionnaire ?
 
+Pour déterminer la stratégie de test optimale, je commencerais par identifier les parcours critiques de l’application (ex : inscription, commande, paiement).
+Je m’appuierais sur la pyramide de tests : beaucoup de tests unitaires pour la logique métier, un nombre modéré de tests d’intégration pour les interactions entre composants, et quelques tests end-to-end pour valider les parcours réels côté utilisateur.
+Je prendrais en compte la vitesse d’exécution, la maintenabilité, et le coût des différents tests, en automatisant autant que possible dans une pipeline CI/CD.
+L’objectif est de maximiser la couverture utile, tout en gardant les tests rapides, fiables et faciles à maintenir.
+
 ### Quelle est l'erreur récurente qui peut être faite lors de test end 2 end ? (Je l'ai répété pas mal de fois)
+
+Un bon test E2E doit rester ciblé sur un scénario utilisateur précis, rapide à exécuter, et éviter de dupliquer des vérifications couvertes ailleurs (comme les règles métiers testées en unitaire).
